@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}IFA{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Instrumento Final de Avaliação (IFA)</h1>
+    <h3>Aluno: Ednilton Silva Moraes</h3>
+    <h3>Prontuário: PT3025527</h3>
+</div>
+<p>O local e a data atual é {{ moment(current_time).format('LLL') }}.</p>
+{% endblock %}
