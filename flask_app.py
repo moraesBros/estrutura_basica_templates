@@ -2,7 +2,6 @@ from flask import Flask
 
 app = Flask(__name__)
 
-# Cabeçalho HTML comum com estilo
 COMMON_HEADER = """
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,30 +13,36 @@ COMMON_HEADER = """
     body {
       margin: 0;
     }
-    /* Faixa preta full-width */
+    /* Faixa preta full-width com padding dobrado para aumentar a altura */
     header {
       background-color: #000;
       width: 100%;
+      padding: 1em 0 1em 1em;  /* top/bottom: 1em (dobrado de 0.5em); esquerda: 1em */
     }
-    /* Navegação dentro da faixa, recuada 1em da esquerda */
+    /* Navegação sem margem adicional */
     header nav {
-      margin-left: 1em;
-      padding: 0.5em 0;
+      /* padding interno já está no header */
     }
-    /* Links em cinza e sem sublinhado */
+    /* Links em cinza, sem sublinhado, .Flasky com recuo triplo */
     header nav a {
       color: gray;
       text-decoration: none;
+      font-family: Arial, sans-serif;
       margin-right: 20px;
+    }
+    /* Recuo extra apenas em .Flasky */
+    header nav a.flasky {
+      margin-left: 3em;  /* triplo do recuo básico de 1em */
     }
     /* Parágrafos padrão */
     p {
       margin-left: 1em;
       margin-bottom: 2em;
+      font-family: Arial, sans-serif;
     }
     /* Títulos alinhados ao mesmo recuo e em Arial */
     h1 {
-      margin: 0;
+      margin: 00;
       margin-left: 1em;
       font-family: Arial, sans-serif;
     }
@@ -64,12 +69,15 @@ def titulo():
     return COMMON_HEADER + """
     <header>
       <nav>
-        <a href="/Flasky">.Flasky</a>
+        <a href="/Flasky" class="flasky">.Flasky</a>
         <a href="/Home">.Home</a>
       </nav>
     </header>
+    <!-- Duas linhas em branco antes do título -->
+    <p></p>
+    <p></p>
     <h1>Hello World!</h1>
-    <p></p>  <!-- parágrafo extra em branco -->
+    <p></p>
     <hr>
     """ + COMMON_FOOTER
 
@@ -78,12 +86,15 @@ def Home():
     return COMMON_HEADER + """
     <header>
       <nav>
-        <a href="/Flasky">.Flasky</a>
+        <a href="/Flasky" class="flasky">.Flasky</a>
         <a href="/Home">.Home</a>
       </nav>
     </header>
+    <!-- Duas linhas em branco antes do título -->
+    <p></p>
+    <p></p>
     <h1>Hello, Ednilton Moraes!</h1>
-    <p></p>  <!-- parágrafo extra em branco -->
+    <p></p>
     <hr>
     <p><a href="/">voltar</a></p>
     """ + COMMON_FOOTER
@@ -93,12 +104,15 @@ def flasky():
     return COMMON_HEADER + """
     <header>
       <nav>
-        <a href="/Flasky">.Flasky</a>
+        <a href="/Flasky" class="flasky">.Flasky</a>
         <a href="/Home">.Home</a>
       </nav>
     </header>
+    <!-- Duas linhas em branco antes do título -->
+    <p></p>
+    <p></p>
     <h1>Hello World!</h1>
-    <p></p>  <!-- parágrafo extra em branco -->
+    <p></p>
     <hr>
     """ + COMMON_FOOTER
 
