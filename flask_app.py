@@ -31,10 +31,10 @@ COMMON_HEADER = """
       margin-left: 6em;
     }
 
-    /* Títulos alinhados ao mesmo recuo de .Flasky (1em de padding + 6em) */
+    /* Títulos agora com metade da distância anterior (3em em vez de 6em) */
     h1 {
       margin: 0;
-      margin-left: 6em;
+      margin-left: 3em;
       font-family: Arial, sans-serif;
     }
 
@@ -76,7 +76,7 @@ def titulo():
     <p></p>
     <p></p>
 
-    <h1>Hello World!</h1>
+    <h1> Hello World!</h1>
     <hr>
     """ + COMMON_FOOTER
 
@@ -93,7 +93,7 @@ def Home():
     <p></p>
     <p></p>
 
-    <h1>Hello, Ednilton Moraes!</h1>
+    <h1> Hello, Ednilton Moraes!</h1>
     <hr>
     """ + COMMON_FOOTER
 
@@ -110,7 +110,7 @@ def flasky():
     <p></p>
     <p></p>
 
-    <h1>Hello World!</h1>
+    <h1> Hello World!</h1>
     <hr>
     """ + COMMON_FOOTER
 
