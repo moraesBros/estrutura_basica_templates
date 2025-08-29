@@ -10,12 +10,12 @@ COMMON_HEADER = """
   <title>Flasky App</title>
   <style>
     body {
-      margin: 0;  /* zera margens para a faixa preta ocupar 100% da largura */
+      margin: 0;  /* faixa preta full-width */
     }
     header {
       background-color: #000;
       width: 100%;
-      padding: 1em 0 1em 1em;  /* dobra a altura da faixa e alinha 1em da esquerda */
+      padding: 1em 0 1em 1em;  /* dobra a altura e recua 1em da esquerda */
     }
     header nav a {
       color: gray;
@@ -23,12 +23,14 @@ COMMON_HEADER = """
       font-family: Arial, sans-serif;
       margin-right: 20px;
     }
+    /* recuo dobrado para .Flasky */
     header nav a.flasky {
-      margin-left: 6em;  /* dobro do afastamento padrão para .Flasky */
+      margin-left: 6em;
     }
+    /* títulos com metade do recuo de .Flasky */
     h1 {
       margin: 0;
-      margin-left: 3em;  /* metade do afastamento de .Flasky */
+      margin-left: 3em;
       font-family: Arial, sans-serif;
     }
     p {
@@ -37,7 +39,7 @@ COMMON_HEADER = """
       font-family: Arial, sans-serif;
     }
     hr {
-      margin-left: 7em;   /* igual à margem direita para centralizar */
+      margin-left: 7em;   /* alinha com início de .Flasky (1em + 6em) */
       margin-right: 7em;
       border: none;
       border-top: 1px solid #000;
@@ -68,6 +70,9 @@ def titulo():
 
     <h1>Hello World!</h1>
     <hr>
+    <!-- As duas frases agora recuadas até o início de .Flasky -->
+    <p style="margin-left: 7em;">The local date and time is August 28, 2025, 9:27 PM.</p>
+    <p style="margin-left: 7em;">That was in a day.</p>
     """ + COMMON_FOOTER
 
 @app.route('/Home')
@@ -102,6 +107,9 @@ def flasky():
 
     <h1>Hello World!</h1>
     <hr>
+    <!-- As duas frases agora recuadas até o início de .Flasky -->
+    <p style="margin-left: 7em;">The local date and time is August 28, 2025, 9:27 PM.</p>
+    <p style="margin-left: 7em;">That was in a day.</p>
     """ + COMMON_FOOTER
 
 @app.route('/rotainexistente')
