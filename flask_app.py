@@ -9,45 +9,35 @@ COMMON_HEADER = """
   <meta charset="UTF-8">
   <title>Flasky App</title>
   <style>
-    /* Zera margem do body para a faixa ocupar 100% da largura */
     body {
-      margin: 0;
+      margin: 0;  /* zera margens para a faixa preta ocupar 100% da largura */
     }
-    /* Faixa preta full-width com padding para alinhar o conteúdo */
     header {
       background-color: #000;
       width: 100%;
-      padding: 1em 0 1em 1em;
+      padding: 1em 0 1em 1em;  /* dobra a altura da faixa e alinha 1em da esquerda */
     }
-    /* Links em cinza, sem sublinhado, espaçamento entre eles */
     header nav a {
       color: gray;
       text-decoration: none;
       font-family: Arial, sans-serif;
       margin-right: 20px;
     }
-    /* .Flasky dobra o recuo da margem esquerda (de 3em para 6em) */
     header nav a.flasky {
-      margin-left: 6em;
+      margin-left: 6em;  /* dobro do afastamento padrão para .Flasky */
     }
-
-    /* Títulos agora com metade da distância anterior (3em em vez de 6em) */
     h1 {
       margin: 0;
-      margin-left: 3em;
+      margin-left: 3em;  /* metade do afastamento de .Flasky */
       font-family: Arial, sans-serif;
     }
-
-    /* Parágrafos padrão */
     p {
       margin-left: 1em;
       margin-bottom: 2em;
       font-family: Arial, sans-serif;
     }
-
-    /* Linha horizontal com mesmo afastamento das margens esquerda e direita */
     hr {
-      margin-left: 7em;
+      margin-left: 7em;   /* igual à margem direita para centralizar */
       margin-right: 7em;
       border: none;
       border-top: 1px solid #000;
@@ -76,7 +66,7 @@ def titulo():
     <p></p>
     <p></p>
 
-    <h1> Hello World!</h1>
+    <h1>Hello World!</h1>
     <hr>
     """ + COMMON_FOOTER
 
@@ -93,7 +83,7 @@ def Home():
     <p></p>
     <p></p>
 
-    <h1> Hello, Ednilton Moraes!</h1>
+    <h1>Hello, Ednilton Moraes!</h1>
     <hr>
     """ + COMMON_FOOTER
 
@@ -110,7 +100,24 @@ def flasky():
     <p></p>
     <p></p>
 
-    <h1> Hello World!</h1>
+    <h1>Hello World!</h1>
+    <hr>
+    """ + COMMON_FOOTER
+
+@app.route('/rotainexistente')
+def rota_inexistente():
+    return COMMON_HEADER + """
+    <header>
+      <nav>
+        <a href="/Flasky" class="flasky">.Flasky</a>
+        <a href="/Home">.Home</a>
+      </nav>
+    </header>
+
+    <p></p>
+    <p></p>
+
+    <h1>Not Found</h1>
     <hr>
     """ + COMMON_FOOTER
 
