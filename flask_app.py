@@ -13,43 +13,42 @@ COMMON_HEADER = """
     body {
       margin: 0;
     }
-    /* Faixa preta full-width com padding dobrado para aumentar a altura */
+    /* Faixa preta full-width com padding para alinhar o conteúdo */
     header {
       background-color: #000;
       width: 100%;
-      padding: 1em 0 1em 1em;  /* top/bottom: 1em (dobrado de 0.5em); esquerda: 1em */
+      padding: 1em 0 1em 1em;
     }
-    /* Navegação sem margem adicional */
-    header nav {
-      /* padding interno já está no header */
-    }
-    /* Links em cinza, sem sublinhado, .Flasky com recuo triplo */
+    /* Links em cinza, sem sublinhado, espaçamento entre eles */
     header nav a {
       color: gray;
       text-decoration: none;
       font-family: Arial, sans-serif;
       margin-right: 20px;
     }
-    /* Recuo extra apenas em .Flasky */
+    /* .Flasky dobra o recuo da margem esquerda (de 3em para 6em) */
     header nav a.flasky {
-      margin-left: 3em;  /* triplo do recuo básico de 1em */
+      margin-left: 6em;
     }
+
+    /* Títulos alinhados ao mesmo recuo de .Flasky (1em de padding + 6em) */
+    h1 {
+      margin: 0;
+      margin-left: 6em;
+      font-family: Arial, sans-serif;
+    }
+
     /* Parágrafos padrão */
     p {
       margin-left: 1em;
       margin-bottom: 2em;
       font-family: Arial, sans-serif;
     }
-    /* Títulos alinhados ao mesmo recuo e em Arial */
-    h1 {
-      margin: 00;
-      margin-left: 1em;
-      font-family: Arial, sans-serif;
-    }
-    /* Linha horizontal alinhada às margens dos textos */
+
+    /* Linha horizontal com mesmo afastamento das margens esquerda e direita */
     hr {
-      margin-left: 1em;
-      margin-right: 1em;
+      margin-left: 7em;
+      margin-right: 7em;
       border: none;
       border-top: 1px solid #000;
       margin-bottom: 2em;
@@ -73,11 +72,11 @@ def titulo():
         <a href="/Home">.Home</a>
       </nav>
     </header>
-    <!-- Duas linhas em branco antes do título -->
+
     <p></p>
     <p></p>
+
     <h1>Hello World!</h1>
-    <p></p>
     <hr>
     """ + COMMON_FOOTER
 
@@ -90,13 +89,12 @@ def Home():
         <a href="/Home">.Home</a>
       </nav>
     </header>
-    <!-- Duas linhas em branco antes do título -->
+
     <p></p>
     <p></p>
+
     <h1>Hello, Ednilton Moraes!</h1>
-    <p></p>
     <hr>
-    <p><a href="/">voltar</a></p>
     """ + COMMON_FOOTER
 
 @app.route('/Flasky')
@@ -108,11 +106,11 @@ def flasky():
         <a href="/Home">.Home</a>
       </nav>
     </header>
-    <!-- Duas linhas em branco antes do título -->
+
     <p></p>
     <p></p>
+
     <h1>Hello World!</h1>
-    <p></p>
     <hr>
     """ + COMMON_FOOTER
 
