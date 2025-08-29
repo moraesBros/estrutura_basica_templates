@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-# Cabeçalho HTML comum com estilo para p, h1 e hr
+# Cabeçalho HTML comum com estilo para p, h1, hr e nav links
 COMMON_HEADER = """
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -10,16 +10,25 @@ COMMON_HEADER = """
   <meta charset="UTF-8">
   <title>Flasky App</title>
   <style>
-    /* Recuo de 1em e margem inferior de 2em em todos os parágrafos */
+    /* Estilo para parágrafo de navegação */
+    p.nav {
+      margin-left: 1em;
+      margin-bottom: 2em;
+      background-color: #000;  /* fundo preto */
+      padding: 0.5em;          /* espaço interno opcional */
+    }
+    /* Links dentro do nav em cinza, sem sublinhado */
+    p.nav a {
+      color: gray;
+      text-decoration: none;
+    }
+
+    /* Recuo e espaçamento padrão para demais parágrafos */
     p {
       margin-left: 1em;
       margin-bottom: 2em;
     }
-    /* Remover sublinhado de todos os links */
-    a {
-      text-decoration: none;
-    }
-    /* Alinhar h1 com o mesmo recuo dos parágrafos e definir fonte Arial */
+    /* Alinhar h1 com recuo igual aos parágrafos e definir fonte Arial */
     h1 {
       margin: 0;
       margin-left: 1em;
@@ -31,7 +40,7 @@ COMMON_HEADER = """
       margin-right: 1em;
       border: none;
       border-top: 1px solid #000;
-      margin-bottom: 2em; /* opcional: espaço após a linha */
+      margin-bottom: 2em;
     }
   </style>
 </head>
@@ -46,8 +55,8 @@ COMMON_FOOTER = """
 @app.route('/')
 def titulo():
     return COMMON_HEADER + """
-    <p>
-      <b><a href="/Flasky" style="margin-left: 20px;">.Flasky</a></b>
+    <p class="nav">
+      <b><a href="/Flasky">.Flasky</a></b>
       <a href="/Home" style="margin-left: 20px;">.Home</a>
     </p>
     <h1>Hello World!</h1>
@@ -57,8 +66,8 @@ def titulo():
 @app.route('/Home')
 def Home():
     return COMMON_HEADER + """
-    <p>
-      <b><a href="/Flasky" style="margin-left: 20px;">.Flasky</a></b>
+    <p class="nav">
+      <b><a href="/Flasky">.Flasky</a></b>
       <a href="/Home" style="margin-left: 20px;">.Home</a>
     </p>
     <h1>Hello, Ednilton Moraes!</h1>
@@ -69,8 +78,8 @@ def Home():
 @app.route('/Flasky')
 def flasky():
     return COMMON_HEADER + """
-    <p>
-      <b><a href="/Flasky" style="margin-left: 20px;">.Flasky</a></b>
+    <p class="nav">
+      <b><a href="/Flasky">.Flasky</a></b>
       <a href="/Home" style="margin-left: 20px;">.Home</a>
     </p>
     <h1>Hello World!</h1>
